@@ -152,5 +152,19 @@
 		This is footer
 	</div>
 
+	<script type="text/javascript">
+		$(window).scroll(function(){
+			if ( $(this).scrollTop() > 150 ) {
+				$('.btn-chevron-down').css({
+					display:"none"
+				});
+			}else{
+				$('.btn-chevron-down').css({
+					display:"inline"
+				});
+			}
+		});
+	</script>
+
 </body>
 </html>
