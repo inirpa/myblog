@@ -129,8 +129,9 @@
 .btn-chevron-down{
 	display: inline-block;
   position: absolute;
+  position: relative;
 	/*top: 50%;*/
-	bottom:10%;
+	/*bottom:10%;*/
   bottom :0;
 	z-index: 999;
 	/*padding-left: 50px;
@@ -147,11 +148,44 @@
   border-radius: 50%;
 }
 
+.btn-chevron-down:hover{
+  background-color: white; 
+}
+
+.fa-chevron-down:hover{
+  color:rgba(0,0,0,0.5);
+}
+
 .fa-chevron-down{
 	font-size: 30px;
 	color: white;
 }
 
+
+.carousel-inner img{
+  height: 200px;
+  width: 25%;
+  float: right;
+  overflow: hidden;
+}
+
+.carousel-description{
+  text-align: justify;
+  padding: 10px;
+}
+
+.carousel-img{
+  padding-left: 10px;
+}
+
+.carousel-inner > .active{
+  height: 200px;
+}
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img{
+  height: 200px;
+  margin-right: 0px;
+}
 @media only screen and (max-width: 500px) {
 	.btn-banner, .btn-banner2{
 		top:13%;
