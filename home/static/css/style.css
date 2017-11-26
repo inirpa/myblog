@@ -186,6 +186,19 @@
   height: 200px;
   margin-right: 0px;
 }
+
+.panel-default{
+  border-radius: 0px;
+}
+
+.panel-heading h4{
+  text-align: center;
+  font-variant: small-caps;
+  font-size: 30px;
+  color: #2c5c72;
+}
+
+
 @media only screen and (max-width: 500px) {
 	.btn-banner, .btn-banner2{
 		top:13%;

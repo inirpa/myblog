@@ -2,7 +2,7 @@
 <html>
 <head>
 	{% load staticfiles %}
-	<title>This is my Home</title>
+	<title>तिमीलाई, मलाई - शिक्षा सबैलाई</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -24,7 +24,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<i><b><a class="navbar-brand" href="http://localhost:8000" style="color: white;">Teach Me</a></b></i>
+				<i><b><a class="navbar-brand" href="http://localhost:8000" style="color: white;">शिक्षा सबैलाई</a></b></i>
 			</div>
 
 			<div class="collapse navbar-collapse navbar-right" id="topNavBar">
@@ -146,7 +146,7 @@
 		</div>
 	</div>
 
-	<div class="container-fluid">
+	<div class="container-fluid" style="margin-bottom: 20px; overflow: hidden;">
   		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 200px;">
     		<!-- Indicators -->
 		    <ol class="carousel-indicators">
@@ -193,14 +193,24 @@
 		    </a>
  		</div>
 	</div>
+
 	<div class="container-fluid">
 		<div class="row" id="row2">
-			<div class="col-md-4">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4>Recent Post</h4>
+					</div>
+
+					<div class="panel-body">
+						<div class="col-md-4">
 				<div class="panel panel-default">
 					<div class="panel-body" style="text-align: justify;">
 						<div class="featured-img">
 							 <img src="static/images/python django.jpg">
 						</div>
+
+						<h4>Deploying Django Project</h4>
 						<button class="btn btn-more">
 							More
 						</button>
@@ -214,6 +224,7 @@
 						<div class="featured-img">
 							 <img src="static/images/laravel.png">
 						</div>
+						<h4>Setup Simple Laravel Application</h4>
 						<button class="btn btn-more">
 							More
 						</button>
@@ -227,13 +238,16 @@
 						<div class="featured-img">
 							 <img src="static/images/python.png">
 						</div>
-
+						<h4>Bare minimum django project</h4>
 						<button class="btn btn-more">
 							More
 						</button>
 					</div>
 				</div>
-			</div>
+			</div>	
+					</div>
+				</div>
+			</div>	
 		</div>
 	</div>
 
