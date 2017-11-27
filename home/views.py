@@ -8,4 +8,4 @@ class HomeView(generic.ListView):
 	template_name = 'home/index.html'
 
 	def get_queryset(self):
-		return 1
+		pass
