@@ -19,11 +19,5 @@ class HomeView(generic.ListView):
 		context = super(HomeView,self).get_context_data(**kwargs)
 		context['featured_post'] = Post.objects.filter(is_featured_post = True).order_by('-id')[:1]
 		context['featured_post_rest'] = Post.objects.filter(is_featured_post = True).order_by('-id')[1:]
-		# context['memos'] = Memo.objects.order_by('-id')[:1]
-
-		# context['memos'] = Memo.objects.all()
-		# paginator = Paginator(context['memos'],1)
-		# page = request.GET.get('page')
-
-		# memos = paginator.page(page)
+		
 		return context	
