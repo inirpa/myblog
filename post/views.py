@@ -16,3 +16,12 @@ class CreatePost(CreateView):
 	model = Post
 	fields = ['title','category','content','featured_image','time','date']		
 	
+
+class DetailView(generic.DetailView):
+	model = Post
+	template_name = 'post/detail.html'
+	context_object_name = 'post'
+
+	def get_queryset(self):
+		return Post.objects.all().order_by('-id')
+		

@@ -146,40 +146,48 @@
 		</div>
 	</div>
 
-	<div class="container-fluid" style="margin-bottom: 20px; overflow: hidden;">
-  		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 200px;">
+	<div class="container-fluid" style="margin-bottom: 20px;">
+  		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 250px;">
     		<!-- Indicators -->
-		    <ol class="carousel-indicators">
-		      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		      <li data-target="#myCarousel" data-slide-to="1"></li>
-		      <li data-target="#myCarousel" data-slide-to="2"></li>
-		    </ol>
-
+		   
 		    <!-- Wrapper for slides -->
 		    <div class="carousel-inner">
+		    	{% for featured in featured_post %}
 		    	<div class="item active">
-		    		
-		      		<img  src="static/images/banner.jpg" alt="New york" class="img-responsive carousel-img" align="right">
-		      		<p class="carousel-description">
-		    			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-		    		</p>
-		    		
-		      		
-		      	</div>
+		    		{% if featured.featured_image %}
+			      		<img  src="{{ featured.featured_image.url }}" alt="No featured image" class="img-responsive carousel-img" align="right">
+			      	{% else %}
+						<img src="/media/default.jpg">
+					{% endif %}	
+					<a href="{% url 'post:detail' featured.id  %}" target="blank">
+				 		<button class="btn btn-more" style="float: right;">
+				 			Read 
+				 		</button>
+ 					</a>
+			      	<p class="carousel-description">
+			    		{{ featured.content | safe | linebreaks | truncatechars_html:800}}
+			    	</p>
+				</div>
+				
+				{% endfor %}
 
-		      	<div class="item">
-		        	<img src="static/images/banner.jpg" alt="New york" class="img-responsive carousel-img" align="right">
-		        	<p class="carousel-description">
-		    			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-		    		</p>
-		      	</div>
-		    
-		      	<div class="item">
-			        <img src="static/images/banner.jpg" alt="New york" class="img-responsive carousel-img" align="right">
-			        <p class="carousel-description">
-		    			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-		    		</p>
-		    	  </div>
+				{% for featured in featured_post_rest %}
+		    	<div class="item">
+		    		{% if featured.featured_image %}
+			      		<img  src="{{ featured.featured_image.url }}" alt="No featured image" class="img-responsive carousel-img" align="right">
+			      	{% else %}
+						<img src="/media/default.jpg">
+					{% endif %}	
+					<a href="{% url 'post:detail' featured.id  %}" target="blank">
+ 						<button class="btn btn-more" style=" float: right; right: 0px; top: 0px;">
+			 				Read 
+			 			</button>
+			 		</a>
+			      	<p class="carousel-description">
+			    		{{ featured.content | safe | linebreaks | truncatechars_html:800}}
+			    	</p>
+				</div>
+				{% endfor %}        
 		    </div>
 
     		<!-- Left and right controls -->
@@ -192,10 +200,11 @@
 		      <span class="sr-only">Next</span>
 		    </a>
  		</div>
+ 		
 	</div>
 
-	<div class="container-fluid">
-		<div class="row" id="row2">
+	<div class="container-fluid" id="recent-post">
+		<div class="row>
 			<div class="col-md-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
@@ -204,91 +213,58 @@
 
 					<div class="recent-posts">
 						<div class="panel-body">
-							<div class="col-md-4">
-								<div class="panel panel-default">
-									<div class="panel-body" >
-										<div class="featured-img">
-											 <img src="static/images/django_depoly.png">
+							{% if all_post %}
+								{% for posts in all_post %}
+									<div class="col-md-4">
+										<div class="panel panel-default">
+											<div class="panel-body" >
+												<div class="featured-img">
+													{% if posts.featured_image %}
+														<img src="{{ posts.featured_image.url }}">
+													{% else %}
+														<img src="/media/default.jpg">
+													{% endif %}	
+												</div>
+
+												<h4>{{posts.title }}</h4>
+												<!-- <p>{{ posts.content | linebreaks }}</p> -->
+												<button class="btn btn-more">
+													More
+												</button>
+											</div>
 										</div>
-
-										<h4>Deploying Django Project</h4>
-										<button class="btn btn-more">
-											More
-										</button>
 									</div>
-								</div>
-							</div>
-
-							<div class="col-md-4">
-								<div class="panel panel-default">
-									<div class="panel-body">
-										<div class="featured-img">
-											 <img src="static/images/laravel_scratch.jpg">
-										</div>
-										<h4>Setup Simple Laravel Application</h4>
-										<button class="btn btn-more">
-											More
-										</button>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-md-4">
-								<div class="panel panel-default">
-									<div class="panel-body">
-										<div class="featured-img">
-											 <img src="static/images/django_minimum.jpg">
-										</div>
-										<h4>Bare minimum django project</h4>
-										<button class="btn btn-more">
-											More
-										</button>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-md-4">
-								<div class="panel panel-default">
-									<div class="panel-body" >
-										<div class="featured-img">
-											 <img src="static/images/django_depoly.png">
-										</div>
-
-										<h4>Deploying Django Project</h4>
-										<button class="btn btn-more">
-											More
-										</button>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-md-4">
-								<div class="panel panel-default">
-									<div class="panel-body">
-										<div class="featured-img">
-											 <img src="static/images/laravel_scratch.jpg">
-										</div>
-										<h4>Setup Simple Laravel Application</h4>
-										<button class="btn btn-more">
-											More
-										</button>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-md-4">
-								<div class="panel panel-default">
-									<div class="panel-body">
-										<div class="featured-img">
-											 <img src="static/images/django_minimum.jpg">
-										</div>
-										<h4>Bare minimum django project</h4>
-										<button class="btn btn-more">
-											More
-										</button>
-									</div>
-								</div>
+								{% endfor %}
+							{% else %}
+								<h4>no post</h4>
+							{% endif %}
+							<div class="row">
+								<div class="col-md-12">
+									<div class="paginate-post">
+								{% if is_paginated %}
+								  <ul class="pagination">
+								    {% if page_obj.has_previous %}
+								      <li><a href="?page={{ page_obj.previous_page_number }}#recent-post">&laquo;</a></li>
+								    {% else %}
+								      <li class="disabled"><span>&laquo;</span></li>
+								    {% endif %}
+								    {% for i in paginator.page_range %}
+								      {% if page_obj.number == i %}
+								        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+								      {% else %}
+								        <li><a name="review" href="?page={{ i }}#recent-post">{{ i }}</a></li>
+								      {% endif %}
+								    {% endfor %}
+								    {% if page_obj.has_next %}
+								      <li><a href="?page={{ page_obj.next_page_number }}#recent-post">&raquo;</a></li>
+								    {% else %}
+								      <li class="disabled"><span>&raquo;</span></li>
+								    {% endif %}
+								  </ul>
+								{% endif %}	
 							</div>	
+								</div>
+							</div>				
 						</div>
 					</div>
 				</div>

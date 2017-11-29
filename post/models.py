@@ -6,6 +6,7 @@ class Post(models.Model):
 	category =  models.CharField(max_length = 20)
 	content = models.TextField(max_length = 100000)
 	featured_image = models.FileField(blank =  True)
+	is_featured_post = models.BooleanField(default = False)
 
 	time = models.TimeField()
 	date = models.DateField()

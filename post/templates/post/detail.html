@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>This is my detail view</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+
+		
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4>{{post.title}}</h4>
+					</div>
+
+					<div class="panel-body">
+						{% if post.featured_image %}
+							<img src="{{ post.featured_image.url }}" style="height: 500px;">
+						{% else %}
+							<img src="/media/default.jpg">
+						{% endif %}	
+						<p>
+							{{ post.content |safe }}	
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>

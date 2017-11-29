@@ -163,7 +163,7 @@
 
 
 .carousel-inner img{
-  height: 200px;
+  height: 250px;
   width: 25%;
   float: right;
   overflow: hidden;
@@ -171,11 +171,11 @@
 
 .carousel-description{
   text-align: justify;
-  padding: 10px;
+  /*padding: 10px;*/
 }
 
 .carousel-img{
-  padding-left: 10px;
+  padding-left: 20px;
 }
 
 .carousel-inner > .active{
@@ -183,8 +183,9 @@
 }
 
 .carousel-inner>.item>a>img, .carousel-inner>.item>img{
-  height: 200px;
+  height: 250px;
   margin-right: 0px;
+  margin-left: 30px;
 }
 
 .panel-default{
