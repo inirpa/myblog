@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '507t9-w@70j9kmh-!=lxi!n0y8xxb5)sla@t^h+2tu5cr0dc4c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['nirpa.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
