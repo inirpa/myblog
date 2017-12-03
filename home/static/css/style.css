@@ -59,7 +59,31 @@
   font-family:'Satisfy',Cursive;
 }
 
+.messenger-float{
+  position: fixed; 
+  right: 15px; 
+  top: 30%; 
+  z-index: 999;
+}
 
+.btn-messenger-float{
+  border-radius: 50%; 
+  background-color: rgba(0,0,0,.2); 
+  padding: 8px;
+  border-width: 1px;
+}
+
+.btn-messenger-float:hover{
+  background-color: white;
+}
+
+.btn-messenger-float:focus{
+  background-color: white;
+}
+
+.b-agent-demo_powered_by{
+  display: none  !important;
+}
 
 .btn-banner, .btn-banner2{
 	/*to display button at center of div*/
