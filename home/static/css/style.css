@@ -76,11 +76,19 @@
 .btn-messenger-float:hover{
   background-color: white;
 }
+<<<<<<< HEAD
 
 .btn-messenger-float:focus{
   background-color: white;
 }
 
+=======
+
+.btn-messenger-float:focus{
+  background-color: white;
+}
+
+>>>>>>> 9ddbdb0ac358defd78e0040d16cd05dea1936a7d
 .b-agent-demo_powered_by{
   display: none  !important;
 }
