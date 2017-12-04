@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		{% block title %}	
+	
+		{% endblock %}
+	</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	
+</head>
+<body>
+
+	<nav class="navbar navbar-fixed-top navbar-default navbar-right">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<i><b><a class="navbar-brand" href="http://localhost:8000" style="color: white;">शिक्षा सबैलाई</a></b></i>
+			</div>
+
+			<div class="collapse navbar-collapse navbar-right" id="topNavBar">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#offers">
+							Blogs
+						</a>
+					</li>
+
+					<li class=""> 
+						<a href="#review">
+							Memo
+						</a>
+					</li>
+
+					<li class=""> 
+						<a href="#blog">
+							Blog
+						</a>	
+					</li>
+
+					<li class=""> 
+						<a href="/unescosites/">
+							Unesco sites
+						</a>	
+					</li>
+
+					<li class=""> 
+						<a href="#blog">
+							Must Visit
+						</a>	
+					</li>
+					
+					<li class=""> 
+						<a href="#blog">
+							Gallery
+						</a>	
+					</li>
+
+					<li class=""> 
+						<a href="#blog">
+							Land Marks
+						</a>	
+					</li>
+
+					<li class=""> 
+						<a href="#blog">
+							Tourist Hotline
+						</a>	
+					</li>
+				</ul>	
+			</div>	
+		</div>
+	</nav>
+
+	{% block body %}	
+	{% endblock %}
+
+	<div class="footer">
+		<div class="panel-body">
+			<div class="copyright">
+				Designed and Developed By Nirpa Hang Rai. &copy; 2017
+			</div>
+			<div class="socials">
+				<a href="https://www.facebook.com/thenirpa" target="blank">
+					<i class="fa fa-facebook" aria-hidden="true"></i>
+				</a>	
+				<a href="#blog">
+					<i class="fa fa-twitter" aria-hidden="true"></i>
+				</a>
+				<a href="#blog">
+					<i class="fa fa-youtube" aria-hidden="true"></i>
+				</a>
+				<a href="#blog">
+					<i class="fa fa-linkedin" aria-hidden="true"></i>
+				</a>	
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

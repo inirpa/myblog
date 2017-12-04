@@ -59,32 +59,56 @@
   font-family:'Satisfy',Cursive;
 }
 
+.messenger-float{
+  position: fixed; 
+  right: 15px; 
+  top: 30%; 
+  z-index: 999;
+}
 
+.btn-messenger-float{
+  border-radius: 50%; 
+  background-color: rgba(0,0,0,.2); 
+  padding: 8px;
+  border-width: 1px;
+}
+
+.btn-messenger-float:hover{
+  background-color: white;
+}
+
+.btn-messenger-float:focus{
+  background-color: white;
+}
+
+.b-agent-demo_powered_by{
+  display: none  !important;
+}
 
 .btn-banner, .btn-banner2{
 	/*to display button at center of div*/
 	display: inline-block;
-  	position: absolute;
-  	top: 50%;
-  	transform: translate(-50%,-50%);
-  	left: 40%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	left: 40%;
 
-  	border-radius: 0px;
-  	padding-left: 50px;
-  	padding-right: 50px;
-  	padding-top: 10px;
-  	padding-bottom: 10px;
-  	background-color: rgba(0,0,0,0.3);
-  	color: white;
-  	border-color: white;
-  	font-variant: small-caps;
+	border-radius: 0px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: rgba(0,0,0,0.3);
+	color: white;
+	border-color: white;
+	font-variant: small-caps;
 
-  	/*for slide up effect on hover*/
-  	background-size: 100% 200%;
-  	background-image: linear-gradient(to bottom, transparent 50%, white 50%);
-    -webkit-transition: background-position 1s;
-    -moz-transition: background-position 1s;
-    transition: background-position 1s;
+	/*for slide up effect on hover*/
+	background-size: 100% 200%;
+	background-image: linear-gradient(to bottom, transparent 50%, white 50%);
+  -webkit-transition: background-position 1s;
+  -moz-transition: background-position 1s;
+  transition: background-position 1s;
 }
 
 .btn-banner2{
