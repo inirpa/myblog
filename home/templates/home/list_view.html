@@ -1,0 +1,33 @@
+{% extends 'home/base.html' %}
+{% block body %}
+	<div class="container-fluid" style="padding-top: 60px; ">
+		<div class="row">
+			{% for post in val %}
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						{{post.title}}
+						<p style="float: right;"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date }}</p>
+					</div>
+
+					<div class="panel-body" style="text-align: justify;">
+						{% if post.featured_image %}
+							<img src="{{ post.featured_image.url }}" class="img-responsive">		
+						{% else %}
+							<img src="/media/default.jpg" class="img-responsive">		
+						{% endif %}	
+						<p style="float: right;"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.time }}</p>
+						
+						<!-- {{ post.content | safe | truncatechars_html:200}} -->
+						<a href="{% url 'post:detail' post.id  %}" target="blank">
+							<button class="btn btn-more">
+								Full Article
+							</button>
+						</a>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

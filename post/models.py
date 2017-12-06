@@ -3,7 +3,15 @@ from django.core.urlresolvers import reverse
 # Create your models here.
 class Post(models.Model):
 	title = models.CharField(max_length = 50)
-	category =  models.CharField(max_length = 20)
+	category_choices = [
+	('python', 'Python'),
+	('php', 'PHP'),
+	('arduino', 'Arduino'),
+	('fiction', 'Fiction'),
+	('other', 'Other'),
+	('helping_hand', 'Helping Hands'),
+	]
+	category =  models.CharField(max_length = 20,choices=category_choices)
 	content = models.TextField(max_length = 100000)
 	featured_image = models.FileField(blank =  True)
 	is_featured_post = models.BooleanField(default = False)

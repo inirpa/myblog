@@ -65,8 +65,7 @@
 		<div class="close" id="close-chat"><button id="closeChat" style="top: 30px; position: relative;">X</button></div><br>
 		<iframe width="250" height="430" id="chat-iframe" src="https://console.dialogflow.com/api-client/demo/embedded/nirpaaBot">
 		</iframe>
-	</div>	
-
+	</div>
 	
 	<div class="container-fluid">	
 		<div class="row">
@@ -213,7 +212,19 @@
 													{% endif %}	
 												</div>
 
-												<h4>{{posts.title }}</h4>
+												<h4>
+													{{posts.title }}
+													<a  href="{% url 'home:list_view' posts.category  %}">
+														<p style="float: right; margin-right: 20px; padding: 5px; background-color: silver;padding-right: 10px; padding-left: 10px; font-size: 14px; ">
+															{{ posts.category }}
+														</p>
+													</a>
+												</h4>
+												<hr>
+												<p style="float: left;"><i class="fa fa-calendar" aria-hidden="true"></i> {{ posts.date }}</p>
+												<p style="float: right;"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ posts.time }}</p>
+												
+												<br>
 												<a href="{% url 'post:detail' posts.id  %}" target="blank">
 													<button class="btn btn-more">
 														More

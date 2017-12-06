@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.views import generic
 from post.models import Post
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
+from django.core.urlresolvers import resolve
+from django.http import HttpResponse
+   
 
 # Create your views here.
 
@@ -21,3 +23,13 @@ class HomeView(generic.ListView):
 		context['featured_post_rest'] = Post.objects.filter(is_featured_post = True).order_by('-id')[1:]
 		
 		return context	
+
+class ListView(generic.ListView):
+	template_name = 'home/list_view.html'
+	context_object_name = 'val'
+
+	def get_queryset(self):
+		post_category = self.kwargs['val'].rstrip('/')	
+
+
+		return Post.objects.filter(category = post_category).order_by('-id')
